@@ -12,4 +12,4 @@ RUN wget -O /tmp/mergefs-tools.zip https://github.com/trapexit/mergerfs-tools/ar
 ENTRYPOINT ["/entrypoint"]
 ENV MERGERFS_OPTS="defaults,allow_other,use_ino,dropcacheonclose=true,hard_remove,moveonenospc=true,minfreespace=10G,fsname=mergedmedia,category.action=all,category.create=ff,category.search=newest" MERGERFS_SRC="/mnt/disk*" MERGERFS_DEST="/mnt/data"
 
-HEALTHCHECK CMD ["ls /mnt/data"]
+HEALTHCHECK --start-period=5s CMD ["ls /mnt/data"]
