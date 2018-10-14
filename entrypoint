@@ -1,2 +1,2 @@
 #!/bin/sh
-/usr/bin/mergerfs -o $MERGERFS_OPTS $MERGERFS_SRC $MERGERFS_DEST
+/usr/bin/mergerfs -o $MERGERFS_OPTS "$MERGERFS_SRC" $MERGERFS_DEST
