@@ -10,6 +10,6 @@ RUN chmod +x /entrypoint && dpkg -i /tmp/mergerfs.deb && rm /tmp/mergerfs.deb
 RUN wget -O /tmp/mergefs-tools.zip https://github.com/trapexit/mergerfs-tools/archive/master.zip && unzip /tmp/mergefs-tools.zip -d /tmp/mergefs-tools && chmod +x /tmp/mergefs-tools/mergerfs-tools-master/src/* && cp /tmp/mergefs-tools/mergerfs-tools-master/src/* /usr/local/bin
 
 ENTRYPOINT ["/entrypoint"]
-ENV MERGERFS_OPTS="-o defaults,allow_other,use_ino,xattr=notsup,dropcacheonclose,hard_remove,moveonenospc=true,minfreespace=10G,fsname=mergedmedia,category.action=all,category.create=epff,category.search=newest" MERGERFS_SRC="/mnt/disk*" MERGERFS_DEST="/mnt/data"
+ENV MERGERFS_OPTS="defaults,allow_other,use_ino,dropcacheonclose=true,hard_remove,moveonenospc=true,minfreespace=10G,fsname=mergedmedia,category.action=all,category.create=epff,category.search=newest" MERGERFS_SRC="/mnt/disk*" MERGERFS_DEST="/mnt/data"
 
 HEALTHCHECK CMD ["ls /mnt/data"]
