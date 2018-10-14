@@ -1,5 +1,7 @@
 FROM ubuntu:16.04
 
+RUN apt-get update && apt-get install -y wget unzip
+
 ADD https://github.com/trapexit/mergerfs/releases/download/2.24.2/mergerfs_2.24.2.ubuntu-xenial_amd64.deb /tmp/mergerfs.deb
 COPY ./entrypoint /entrypoint
 
