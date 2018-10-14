@@ -1,4 +1,4 @@
+#!/usr/bin/with-contenv bash
 
-#!/usr/bin/execlineb -S0
 umount $MERGERFS_DEST
 s6-svwait -d mergerfs
