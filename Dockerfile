@@ -12,6 +12,7 @@ RUN wget -O /tmp/mergefs-tools.zip https://github.com/trapexit/mergerfs-tools/ar
   cp /tmp/mergefs-tools/mergerfs-tools-master/src/* /usr/local/bin
 
 ENV MERGERFS_OPTS="defaults,changeme" MERGERFS_SRC="/mnt/disk*" MERGERFS_DEST="/mnt/data"
+ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
 
 ADD ./run /etc/services.d/mergerfs/run
 ADD ./finish /etc/services.d/mergerfs/finish
