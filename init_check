@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bash
+
+for dirpath in $MERGERFS_SRC; do
+  if [ ! -d "$dirpath/.token" ]; then
+    echo "$dirpath/.token doesn't exist"
+    exit 1
+  fi
+done
