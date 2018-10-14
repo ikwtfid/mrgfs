@@ -16,3 +16,5 @@ ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
 
 ADD ./run /etc/services.d/mergerfs/run
 ADD ./finish /etc/services.d/mergerfs/finish
+ADD ./init_check /etc/cont-init.d/init_check
+
